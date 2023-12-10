@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+<head>
+	<title>3D</title>
+	<link href="layout.css" rel="stylesheet" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="scripts/sidebar.js"></script>
+	<script type="text/javascript">		
+		$("document").ready(function main() {
+			sideBarMain();
+			
+			$(".spoilerToggle").find("button").on('click', function () {
+				var innerText = $(this).text().trim();
+				var imgCount = $(this).parent().parent().parent().find(".spoilerContents").find('img').length;
+				var videoCount = $(this).parent().parent().parent().find(".spoilerContents").find('iframe').length;
+				var duration = 350; // close speed
+		
+				if (innerText == "+") {
+					$(this).text("-")
+					// calculate open duration
+					if (imgCount > 0) {duration = duration * imgCount}
+					else {duration = duration * videoCount}
+				}
+				else {
+					$(this).text("+")
+				}
+				$(this).parent().parent().parent().find(".spoilerContents").slideToggle(duration);
+			});
+			
+			$(".spoilerContents").find("img").on('click', function () {
+				var scrollPos = $(window).scrollTop();
+		
+				// display preview
+				$(".imgPreview").show()
+				$(".imgPreview img").attr("src", $(this).attr("src"));
+				// lock scrolling
+				$('body').css({'overflow':'hidden'});
+				$(document).bind('scroll',function () { 
+					window.scrollTo(0,scrollPos); 
+				});
+			});
+			
+			$(".close").on('click', function () {
+				var imgMatch = $(".spoilerContents img[src='" + $(".previewContent").attr("src") + "']");
+				var x = imgMatch.offset().left;
+				var y = imgMatch.offset().top - $(window).scrollTop();
+				var xi = $(".previewContent").offset().left;
+				var yi = $(".previewContent").offset().top;
+		
+				// give scrolling back
+				$(document).unbind('scroll');
+				$('body').css({'overflow':'visible'});
+		
+				//animate content
+				$(".previewContent").css('left', xi).css('top', yi);
+				$(".imgPreview").animate({
+					left: x,
+					top: y,
+					paddingTop: 0,
+					opacity: 0,
+					width: imgMatch.outerWidth(),
+					height: imgMatch.outerHeight(),
+					}, 300);
+					$(".previewContent").animate({
+						width: imgMatch.outerWidth(),
+						height: imgMatch.outerHeight(),
+						margin: 0
+					}, 300, function () {
+					$(".imgPreview").hide()
+					$(".imgPreview").css({left: "0", top: "0", paddingTop: "100px", opacity: "1", width: "100%", height: "100%"})
+					$(".previewContent").css({width: "80%", height: "auto", margin: "auto"})
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<div class="logo"><a href="index.html"><img src="imgs/background/logo.png" alt="logo" title="about"/></a></div>
+	</header>
+	<div class="imgPreview">
+		<span class="close">&times;</span>
+		<img class="previewContent" id="img01" alt="preview">
+	</div>
+	<div class="navbar">
+		<div class="buttonContainer">
+			<div class="photoButton"><a href="photos.html">Photography</a></div>
+			<div class="gameButton"><a href="https://ericbarrett.github.io/Games/ShapeWars/shape_wars.html">Game</a></div>
+			<div class="threedButton"><a href="art.html">3D Art</a></div>
+		</div>
+	</div>
+	<div class="content" id="threedContainer">
+		<div class="sidePanel" id="threednav">
+			<span class="slideOut">&raquo;</span>
+			<h3><a href="index.html">Home</a></h3>
+			<ul id="anchorList">
+				<li class="active"><a href="#models">3D Models</a></li>
+				<li><a href="#skins">CSGO Skins</a></li>
+			</ul>
+		</div>
+		<div class="section" id="store">
+			<a name="models" target="_top">
+			<a name="latest" target="_top">
+			<div class="skin" id="chest">
+				<h1>Fantasy Chest</h1>
+				<div class="disclaimer">*not a fully finished product*</div>
+				<div class="sketchfab-embed-wrapper"> 
+					<iframe title="[WIP] Fantasy Chest" width="100%" height="650" src="https://sketchfab.com/models/7891d2a4d6a8459fa44e32c4f54b4535/embed" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share> </iframe> 
+				</div>
+				<div class="itemDescription">
+					<p>A chest I made as an introduction to blender. Fully modelled, unwrapped, textured, and animated by myself.</p>
+				</div>
+				</a>
+				</a>
+			</div>
+			<a name="skins" target="_top">
+			<div class="skin">
+				<h1>AK47 - Mahogany</h1>
+				<div class="disclaimer">*magazine renders differently in-game*</div>
+				<div class="sketchfab-embed-wrapper">
+					<iframe title="A 3D model" width="100%" height="650" src="https://sketchfab.com/models/2580db164c08409f92025c586bce6ba7/embed?autostart=0&amp;preload=1&amp;ui_controls=1&amp;ui_infos=1&amp;ui_inspector=1&amp;ui_stop=1&amp;ui_watermark=1&amp;ui_watermark_link=1" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+				</div>
+				<div class="itemDescription">
+					<p>The first skin I made for CSGO, the inspiration for the "Mahogany" came from old brass mahogany dressers my father owns. At first I tried darkening the body, but I found brightened it made for a better more pirate-like result. <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2097871584" class="urlLink" target="_blank">You can vote for the skin to be included in the game here</a></p>
+				</div>
+				<div class="spoiler">
+					<div class="spoilerHead"><h1>Videos</h1><div class="spoilerToggle"><button type="button">+</button></div></div>
+					<div class="spoilerContainer">
+						<div class="spoilerContents">
+							<iframe width="100%" height="650" src="https://www.youtube.com/embed/T0nCVS0irB4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
+				<div class="spoilSpacer"></div>
+				<div class="spoiler">
+					<div class="spoilerHead"><h1>Pictures</h1><div class="spoilerToggle"><button type="button">+</button></div></div>
+					<div class="spoilerContainer">
+						<div class="spoilerContents">
+							<img src="imgs/mahogany/1.jpg" alt="screenshot"/>
+							<img src="imgs/mahogany/2.jpg" alt="screenshot"/>
+							<img src="imgs/mahogany/3.jpg" alt="screenshot"/>
+							<img src="imgs/mahogany/4.jpg" alt="screenshot"/>
+							<img src="imgs/mahogany/5.jpg" alt="screenshot"/>
+							<img src="imgs/mahogany/6.jpg" alt="screenshot"/>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="skin">
+				<h1>AK47 - Rosewood</h1>
+				<div class="disclaimer">*magazine renders differently in-game*</div>
+				<div class="sketchfab-embed-wrapper">
+    				<iframe title="A 3D model" width="100%" height="650" src="https://sketchfab.com/models/5c64b36661994b35a3ef0b39a9cee9f6/embed?autostart=0&amp;preload=1&amp;ui_controls=1&amp;ui_infos=1&amp;ui_inspector=1&amp;ui_stop=1&amp;ui_watermark=1&amp;ui_watermark_link=1" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+				</div>
+				<div class="itemDescription">
+					<p>An alternate version of the "Mahogany". The "Rosewood" features a Bermuse Rosewood grain with a pink rose gold trim all atop a sleek black tactical body. <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2097761586" class="urlLink" target="_blank">You can vote for the skin to be included in the game here</a></p>
+				</div>
+				<div class="spoiler">
+					<div class="spoilerHead"><h1>Videos</h1><div class="spoilerToggle"><button type="button">+</button></div></div>
+					<div class="spoilerContainer">
+						<div class="spoilerContents">
+							<iframe width="100%" height="650" src="https://www.youtube.com/embed/yKFE97Io8Ik" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							<iframe width="100%" height="650" src="https://www.youtube.com/embed/jMODRjA3rFA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
+				<div class="spoilSpacer"></div>
+				<div class="spoiler">
+					<div class="spoilerHead"><h1>Pictures</h1><div class="spoilerToggle"><button type="button">+</button></div></div>
+					<div class="spoilerContainer">
+						<div class="spoilerContents">
+							<img src="imgs/rosewood/1.jpg" alt="screenshot"/>
+							<img src="imgs/rosewood/2.jpg" alt="screenshot"/>
+							<img src="imgs/rosewood/3.jpg" alt="screenshot"/>
+							<img src="imgs/rosewood/4.jpg" alt="screenshot"/>
+							<img src="imgs/rosewood/5.jpg" alt="screenshot"/>
+							<img src="imgs/rosewood/6.jpg" alt="screenshot"/>
+						</div>
+					</div>
+				</div>
+			</div>
+			</a>
+		</div>
+	</div>
+</body>
+</html>

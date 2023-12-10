@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+	<title>Photos</title>
+	<link href="layout.css" rel="stylesheet" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="scripts/sidebar.js"></script>
+	<script type="text/javascript">		
+		$("document").ready(function main() {
+			sideBarMain();
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<div class="logo"><a href="index.html"><img src="imgs/background/logo.png" alt="logo" title="about"/></a></div>
+	</header>
+	<div class="navbar">
+		<div class="buttonContainer">
+			<div class="photoButton"><a href="photos.html">Photography</a></div>
+			<div class="gameButton"><a href="https://ericbarrett.github.io/Games/ShapeWars/shape_wars.html">Game</a></div>
+			<div class="threedButton"><a href="art.html">3D Art</a></div>
+		</div>
+	</div>
+	<div class="content" id="photosContainer">
+		<div class="sidePanel">
+			<span class="slideOut">&raquo;</span>
+			<h3><a href="index.html">Home</a></h3>
+			<ul id="anchorList">
+				<li class="active"><a href="#models">Photo Shoots</a></li>
+				<li><a href="#skins">Bands</a></li>
+			</ul>
+		</div>
+		<div class="section" id="pics">
+			<div class="slideshow">
+				<a data-flickr-embed="true" data-header="true" href="https://www.flickr.com/photos/198848485@N03/albums/72177720311156788" title="James-Photoshoot"><img src="https://live.staticflickr.com/65535/53182497762_628776c56c_b.jpg" width="1024" height="768" alt="James-Photoshoot"/></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+			</div>
+			<div class="slideshow">
+				<a data-flickr-embed="true" data-header="true" href="https://www.flickr.com/photos/198848485@N03/albums/72177720311087453" title="Nick-Photoshoot"><img src="https://live.staticflickr.com/65535/53176474195_0350d11150_b.jpg" width="1024" height="768" alt="Nick-Photoshoot"/></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+			</div>
+		</div>
+</body>
+</html>
