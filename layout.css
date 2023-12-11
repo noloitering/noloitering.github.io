@@ -352,7 +352,7 @@ a[href]:active {
 	border-style: none none ridge none;
 	border-color: rgba(255,255,255,0.8);
 	border-width: 2px;
-	width: 1024px;
+	width: 100%;
 	text-align: start;
 }
 
