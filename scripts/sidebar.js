@@ -43,13 +43,14 @@ function sideBarMain() {
 		$(this).css("top", "calc(50% - 80px)");
 		$(this).css("padding-top", "0");
 		$(this).css("padding-bottom", "0");
-		// Slide out
+		// Slide away
 		if (innerText == "«") {
 			sidePanel.find(".slideOut").text("»");
 			sidePanel.animate({width: "13%"}, 500, function () {
 				sidePanel.css("transform","translate(-80%,0)");
 				sections.css("transform","translate(-8%,0)");
 				sidePanel.css("opacity",0.1);
+				sidePanel.css("font-size", "0px");
 			});
 		};
 		// Slide in
@@ -58,6 +59,7 @@ function sideBarMain() {
 			sidePanel.find(".slideOut").text("«")
 			sidePanel.animate({opacity: 1, width: "36%"}, 750);
 			sidePanel.css("transform","translate(0,0)");
+			sidePanel.css("font-size","32px");
 			sections.css("transform","translate(0,0)");
 		};
 	});
