@@ -348,6 +348,14 @@ a[href]:active {
 	left: -8%;
 }
 
+#pics h1 {
+	border-style: none none ridge none;
+	border-color: rgba(255,255,255,0.8);
+	border-width: 2px;
+	width: 1024px;
+	text-align: start;
+}
+
 .skin {
 	display: flex;
 	flex-direction: column;
