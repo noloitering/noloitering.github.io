@@ -177,7 +177,7 @@ a[href]:active {
 
 #aboutContainer {
 	width: 95%;
-	min-height: 600px;
+	min-height: 400px;
 	margin-left: 5%;
 }
 
@@ -220,6 +220,37 @@ a[href]:active {
 	position: relative;
 	width: 65%;
 	margin-left: 4%;
+}
+
+.sitenav {
+	width: 100%;
+}
+
+.sitenav iframe {
+	height: 650px;
+	width: 80%;
+	max-width: 1300px;
+	pointer-events : none;
+}
+
+.sitenav a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	margin-bottom: 82px;
+	text-decoration: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.sitenav h1 {
+	margin-left: 5%;
+	/* text-decoration: underline; */
+	width: 90%;
+	border-style: none none ridge none;
+	border-color: rgba(255,255,255,0.8);
+	border-width: 2px;
 }
 
 .socials {
@@ -357,6 +388,10 @@ a[href]:active {
 	border-width: 2px;
 	width: 100%;
 	text-align: start;
+}
+
+#pics h2 {
+	text-align: center;
 }
 
 .skin {
