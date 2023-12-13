@@ -236,16 +236,17 @@ a[href]:active {
 
 .sitenav iframe {
 	height: 650px;
-	width: 80%;
+	width: 100%;
 	max-width: 1300px;
 	pointer-events : none;
 }
 
 .sitenav a {
 	display: block;
-	width: 100%;
+	width: 80%;
 	height: 100%;
 	margin-bottom: 82px;
+	margin-left: 10%;
 	text-decoration: none;
 	display: flex;
 	flex-direction: column;
