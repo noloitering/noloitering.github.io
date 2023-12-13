@@ -542,16 +542,19 @@ a[href]:active {
 	display:block;
 }
 
-div.emscripten{
+div.emscripten {
 	text-align:center;
+}
+
+.emscripten_border {
+	margin-bottom: 82px;
+	margin-top: 82px;
 }
 
 canvas.emscripten{
 	background:#000;
 	height:auto;
 	width:100%;
-	margin-bottom: 82px;
-	margin-top: 82px;
 }
 
 #status {
