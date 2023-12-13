@@ -23,14 +23,17 @@ function hoverAnimStart(animateObj) {
 function sideBarMain() {
 	if ($(window).width() > 1000) {
 		showSideBar();
+		$(".navbar").css("position", "relative");
 	}
 			
 	$(window).resize(function() {
 		if ($(window).width() < 1000) {
 			hideSideBar();
+			$(".navbar").css("position", "sticky");
 		}
 		else {
 			showSideBar();
+			$(".navbar").css("position", "relative");
 		}
 	});
 			

@@ -22,11 +22,15 @@
 	<meta content="New HTML5 videogame, developed using raylib videogames library"name=twitter:description>
 	<link href=https://www.raylib.com/favicon.ico rel="shortcut icon">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="../../scripts/sidebar.js"></script>
 	<script type="text/javascript">
-		$(document).keypress(function(e) {
-			if(e.which == 102) { // f
-				Module.requestFullscreen(!1,!1);
-			}
+		$("document").ready(function main() {
+			sideBarMain();
+			$(document).keypress(function(e) {
+				if(e.which == 102) { // f
+					Module.requestFullscreen(!1,!1);
+				}
+			});
 		});
 	</script>
 	<link href="../../layout.css" rel="stylesheet" type="text/css">
@@ -44,7 +48,8 @@
 	</div>
 	<div class="content" id="gamesContainer" data-inview="out">
 		<div class="sidePanel" id="gamesnav">
-			<span class="slideOut">&laquo;</span>
+			<h3><a href="index.html">Home</a></h3>
+			<span class="slideOut">&raquo;</span>
 			<ul>
 				<li class="active"><a href="#shapegame">Shape Wars</a></li>
 			</ul>
@@ -66,15 +71,15 @@
 				<i>*Don't blow yourself up with the bomb!*</i>
 			</div>
 		</a>
-		</div>
-	</div>
-	<div class=emscripten_border>
-		<canvas class=emscripten id=canvas oncontextmenu=event.preventDefault() tabindex=-1></canvas>
-	</div>
-	<div id=header>
-		<div class=emscripten id=status>Downloading...</div>
-		<div class=emscripten>
-			<progress hidden id=progress max=100 value=0></progress>
+			<div class=emscripten_border>
+				<canvas class=emscripten id=canvas oncontextmenu=event.preventDefault() tabindex=-1></canvas>
+			</div>
+			<div id=header>
+				<div class=emscripten id=status>Downloading...</div>
+				<div class=emscripten>
+					<progress hidden id=progress max=100 value=0></progress>
+				</div>
+			</div>
 		</div>
 	</div>
 	<!-- <textarea id=output rows=8></textarea> -->

@@ -293,7 +293,7 @@ a[href]:active {
 	display: none;
 	position: -webkit-sticky;
 	position: sticky;
-	top: 75px;
+	top: 0px;
 	transform: translate(-80%,0);
 	width: 13%;
 	/* font-size: 32px; */
@@ -544,8 +544,9 @@ div.emscripten{
 canvas.emscripten{
 	background:#000;
 	height:auto;
-	width:80%;
+	width:100%;
 	margin-bottom: 82px;
+	margin-top: 82px;
 }
 
 #status {
