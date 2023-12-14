@@ -397,8 +397,8 @@ a[href]:active {
 #shapewar {
 	display: flex;
 	justify-content: center;
-	margin: 0px;
 	transform: translate(-8%,0);
+	left: -8%;
 }
 
 #pics h1 {
