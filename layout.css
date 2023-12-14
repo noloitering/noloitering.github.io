@@ -181,14 +181,6 @@ a[href]:active {
 	margin-left: 5%;
 }
 
-#gamesContainer {
-	width: 100%;
-	flex-wrap: nowrap;
-	align-items: stretch;
-	justify-content: center;
-	margin: 0px;
-}
-
 .thumbnail {
 	display: flex;
 	flex-direction: column;
@@ -400,6 +392,13 @@ a[href]:active {
 	align-items: center;
 	transform: translate(-8%,0);
 	left: -8%;
+}
+
+#shapewar {
+	display: flex;
+	justify-content: center;
+	margin: 0px;
+	transform: translate(-8%,0);
 }
 
 #pics h1 {
