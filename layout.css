@@ -233,6 +233,10 @@ a[href]:active {
 	pointer-events : none;
 }
 
+.sitenav img {
+	max-width: 1300px;
+}
+
 .sitenav a {
 	display: block;
 	width: 80%;
