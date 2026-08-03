@@ -4,7 +4,7 @@ html {
 }
 
 body {
-	background-image: url("imgs/background/website background.jpg"), url("imgs/background/tilex.jpg"), url("imgs/background/tiley.jpg");
+	background-image: url("assets/imgs/background/website background.jpg"), url("assets/imgs/background/tilex.jpg"), url("assets/imgs/background/tiley.jpg");
 	background-repeat: no-repeat, repeat-x, repeat;
 	background-position: right, left, bottom;
 	height: auto;
