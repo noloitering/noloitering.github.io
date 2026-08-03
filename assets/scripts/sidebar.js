@@ -41,30 +41,28 @@ function sideBarMain() {
 		var sidePanel = $(this).parent();
 		var sections = sidePanel.parent().find(".section");
 		var innerText = $(this).text().trim();
-		
 		// Resize padding
 		$(this).css("top", "calc(50% - 80px)");
 		$(this).css("padding-top", "0");
 		$(this).css("padding-bottom", "0");
 		// Slide away
-		if (innerText == "«") {
+		if (innerText === "«") {
 			sidePanel.find(".slideOut").text("»");
-			sidePanel.animate({width: "13%"}, 500, function () {
-				sidePanel.css("transform","translate(-80%,0)");
-				sections.css("transform","translate(-8%,0)");
-				sidePanel.css("opacity",0.1);
+			sidePanel.animate({ width: "13%" }, 500, function () {
+				sidePanel.css("transform", "translate(-80%,0)");
+				sections.css("transform", "translate(-8%,0)");
+				sidePanel.css("opacity", 0.1);
 				sidePanel.css("font-size", "0px");
 			});
-		};
+		} 
 		// Slide in
-		if (innerText == "»") {
-			//$(this).css("top", "80px");
-			sidePanel.find(".slideOut").text("«")
-			sidePanel.animate({opacity: 1, width: "36%"}, 750);
-			sidePanel.css("transform","translate(0,0)");
-			sidePanel.css("font-size","32px");
-			sections.css("transform","translate(0,0)");
-		};
+		else if (innerText === "»") {
+			sidePanel.find(".slideOut").text("«");
+			sidePanel.animate({ opacity: 1, width: "36%" }, 750);
+			sidePanel.css("transform", "translate(0,0)");
+			sidePanel.css("font-size", "32px");
+			sections.css("transform", "translate(0,0)");
+		}
 	});
 	
 	$('.slideOut').hover(function(){
