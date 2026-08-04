@@ -1,0 +1,70 @@
+<!doctypehtml>
+<html lang=en-us>
+<head>
+	<meta charset=utf-8>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="/assets/scripts/sidebar.js"></script>
+	<script type="text/javascript">
+		$("document").ready(function main() {
+			sideBarMain();
+			$(document).keypress(function(e) {
+				if(e.which == 102) { // f
+					Module.requestFullscreen(!1,!1);
+				}
+			});
+		});
+	</script>
+	<link href="/layout.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<header>
+		<div class="logo"><a href="/"><img src="/assets/imgs/background/logo.png" alt="logo" title="about"/></a></div>
+	</header>
+	<div class="navbar">
+		<div class="buttonContainer">
+			<div class="photoButton"><a href="/photography">Photography</a></div>
+			<div class="gameButton"><a href="shape_wars.html">Game</a></div>
+			<div class="threedButton"><a href="/art">3D Art</a></div>
+		</div>
+	</div>
+	<div class="content" id="gamesContainer" data-inview="out">
+		<div class="sidePanel" id="gamesnav">
+			<h3><a href="/">Home</a></h3>
+			<span class="slideOut">&raquo;</span>
+			<ul>
+				<li class="active"><a href="#shapegame">Shape Wars</a></li>
+				<li><a href="hexcraft">HexCraft</a></li>
+			</ul>
+		</div>
+		<div class="section" id="shapeWar">
+		<a name="shapegame" target="_top">
+			<div class="description">
+				<h1>Shape Wars</h1>
+				<p>You are a brave triangle whose mission is to destroy all the other shapes in your immediate vicinity. Gain score by shooting, dashing, and exploding your way to victory and see how long you can last in this simple survival game! Enemies are worth more points depending on the number of sides they have and the debris that fly off them are worth double! Be careful though as they will start spawning quicker the longer you survive. Using simple graphics and the raylib engine this game can be ran in browser using Webassembly or compiled to run directly on your computer as an executable. <a href="https://github.com/EricBarrett/shape_wars/">You can view the code here</a></p>
+			</div>
+			<div class="instructions">
+				<h2>Controls:</h2>
+				WASD/arrow keys = Move<br>
+				Spacebar = Dash<br>
+				LMB = Shoot<br>
+				RMB = Bomb<br>
+				P = Pause<br>
+				F = Fullscreen<br>
+				<i>*Don't blow yourself up with the bomb!*</i>
+			</div>
+		</a>
+			<div class=emscripten_border>
+				<iframe class=emscripten width="1280px" height="720px" frameborder="0" src="shapewars">
+				
+				</iframe>
+			</div>
+		</div>
+		<!-- <div class="section" id="shapeWar"> -->
+		<!-- <a name="rtsgame" target="_top"> -->
+			<!-- <div class="description"> -->
+		<!-- </a> -->
+		<!-- </div> -->
+	</div>
+	<!-- <textarea id=output rows=8></textarea> -->
+</body>
+</html>

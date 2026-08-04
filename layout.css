@@ -534,8 +534,8 @@ a[href]:active {
 
 #header {
 	display: none;
-	width:100%;
-	height:0px;
+	width: 100%;
+	height: 0px;
 }
 
 .emscripten {
@@ -543,6 +543,7 @@ a[href]:active {
 	margin-left:auto;
 	margin-right:auto;
 	display:block;
+	max-width:100%;
 }
 
 div.emscripten {
@@ -552,36 +553,5 @@ div.emscripten {
 .emscripten_border {
 	margin-bottom: 82px;
 	margin-top: 82px;
-}
-
-canvas.emscripten{
-	background:#000;
-	height:auto;
-	width:100%;
-}
-
-#status {
-	display:inline-block;
-	vertical-align:top;
-	margin-top:30px;
-	margin-left:20px;
-	font-weight:700;
-	color:#282828
-}
-
-#progress {
-	height:0;
-	width:0;
-}
-
-#output {
-	width:100%;
-	height:140px;
-	margin:0 auto;
-	margin-top:10px;
-	display:block;
-	background-color:#000;
-	color:#25ae26;
-	font-family:'Lucida Console',Monaco,monospace;
-	outline:0;
+	width: 100%;
 }
