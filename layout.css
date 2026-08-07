@@ -32,6 +32,13 @@ a[href]:active {
 	color: rgba(100,100,100,1);
 }
 
+button {
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	display:block;
+}
+
 .logo {
 	display: flex;
     width: 25%;
@@ -181,6 +188,87 @@ a[href]:active {
 	margin-left: 5%;
 }
 
+.textwrapper {
+	position: relative;
+	width: 90%;
+	margin-left: 4%;
+}
+
+.clipboardNotify {
+	position: absolute;
+	top: -55px;
+	right: 0;
+	background-color: rgba(10, 10, 10, 0.8);
+	width: 45px;
+	height: 45px;
+	border-radius: 8px;
+	padding: 5px;
+	border: 2px outset rgba(100, 100, 100, 0.8);
+	
+	visibility: hidden;
+	transform-origin: bottom center;
+	display: inline-block;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.4s linear, visibility 0.4s;
+}
+
+.clipboardNotify.active {
+	visibility: visible;
+	opacity: 1;
+	top: -55px;
+	transition: opacity 0.4s linear, visibility 0.4s;
+	animation: popBounce 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.175) forwards;
+}
+
+@keyframes popBounce {
+	0% {
+		transform: scaleY(0);
+	}
+	100% {
+		transform: scaleY(1);
+	}
+}
+
+.clipboardNotify::after {
+	content: "";
+	position: absolute;
+	bottom: -6px; 
+	left: 50%;
+	transform: translateX(-50%);
+	/* Create the triangle using border math */
+	border-width: 6px 6px 0 6px; 
+	border-style: solid;
+	border-color: rgba(0, 0, 0, 1) transparent transparent transparent;
+}
+
+.clipboardNotify img {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+}
+
+.textwrapper button {
+	position: relative;
+	border: none;
+	background-color: rgba(0, 0, 0, 0);
+	color: rgba(255,255,255,.9);
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	text-decoration: underline;
+	font: inherit;
+	cursor: pointer;
+}
+
+.anti-scrape {
+	direction: rtl;
+	unicode-bidi: bidi-override;
+}
+
+.anti-scrape:hover {
+	color: rgba(200, 200, 200, 0.9);
+}
+
 .thumbnail {
 	display: flex;
 	flex-direction: column;
@@ -214,12 +302,6 @@ a[href]:active {
 {
 	text-align: center;
 	font-size: 12px;
-}
-
-.textwrapper {
-	position: relative;
-	width: 65%;
-	margin-left: 4%;
 }
 
 .sitenav {
@@ -571,13 +653,6 @@ a[href]:active {
 	display: none;
 	width: 100%;
 	height: 0px;
-}
-
-button {
-	text-align:center;
-	margin-left:auto;
-	margin-right:auto;
-	display:block;
 }
 
 button img
