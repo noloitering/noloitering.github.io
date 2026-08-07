@@ -384,7 +384,6 @@ a[href]:active {
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-
 #store {
 	display: flex;
 	transform: translate(-8%,0);
@@ -538,12 +537,28 @@ a[href]:active {
 	height: 0px;
 }
 
+button {
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	display:block;
+}
+
+button img
+{
+	position: absolute;
+	z-index: 2;
+	width: 100px;
+	grid-area: 1 / 1;
+	height: 100px;
+}
+
 .emscripten {
 	padding-right:0;
 	margin-left:auto;
 	margin-right:auto;
-	display:block;
 	max-width:100%;
+	display:block;
 }
 
 div.emscripten {
@@ -553,5 +568,43 @@ div.emscripten {
 .emscripten_border {
 	margin-bottom: 82px;
 	margin-top: 82px;
-	width: 100%;
+	max-width: 100%;
+	display:grid;
+	place-items:center;
+	position:relative;
+	width: fit-content;
+	height: fit-content;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	z-index: 1;
+}
+
+.emscripten_border img {
+	width:150px;
+	height:150px;
+	grid-area: 1 / 1;
+	z-index: 2;
+	display: block;
+	position: absolute;
+}
+
+.emscripten_border iframe {
+	grid-area: 1 / 1;
+	z-index: 1;
+	margin-left: auto;
+	margin-right: auto;
+	display: grid;
+	position: relative;
+	z-index: 0;
+}
+
+.emscripten_border button {
+	width:100%;
+	height:100%;
+	grid-area: 1 / 1;
+	z-index: 2;
+	display: grid;
+	place-items:center;
+	position: relative;
 }

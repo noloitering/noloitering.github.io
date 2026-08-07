@@ -5,13 +5,16 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="/assets/scripts/sidebar.js"></script>
 	<script type="text/javascript">
+		function launchGame(button) {
+				console.log("button pressed!");
+				const gameFrame = button.parentElement.querySelector('iframe');
+				console.log(gameFrame);
+				gameFrame.src = gameFrame.dataset.src;
+				gameFrame.zIndex = '10';
+				button.style.display = 'none';
+		};
 		$("document").ready(function main() {
 			sideBarMain();
-			$(document).keypress(function(e) {
-				if(e.which == 102) { // f
-					Module.requestFullscreen(!1,!1);
-				}
-			});
 		});
 	</script>
 	<link href="/layout.css" rel="stylesheet" type="text/css">
@@ -37,33 +40,57 @@
 			</ul>
 		</div>
 		<div class="section" id="shapeWar">
-		<a name="shapegame" target="_top">
+		<a name="shapegame" target="_top" frameborder="1">
 			<div class="description">
 				<h1>Shape Wars</h1>
-				<p>You are a brave triangle whose mission is to destroy all the other shapes in your immediate vicinity. Gain score by shooting, dashing, and exploding your way to victory and see how long you can last in this simple survival game! Enemies are worth more points depending on the number of sides they have and the debris that fly off them are worth double! Be careful though as they will start spawning quicker the longer you survive. Using simple graphics and the raylib engine this game can be ran in browser using Webassembly or compiled to run directly on your computer as an executable. <a href="https://github.com/EricBarrett/shape_wars/">You can view the code here</a></p>
+				<p>A game created for my CS4300 class. Built using raylib and cross compiled to web using emscripten. You play as a brave triangle whose mission is to destroy all other shapes. Gain score by shooting, dashing, and bombing your way to victory to see how long you can last in this simple survival game! Enemies are worth more points depending on the number of sides they have and the debris that fly off them are worth double! They will start spawning quicker the longer you survive. <a href="https://github.com/EricBarrett/shape_wars/">Source code here</a></p>
 			</div>
 			<div class="instructions">
+				<h2>Supported Platforms:</h2>
+				<li>Desktop/PC</li>
 				<h2>Controls:</h2>
 				WASD/arrow keys = Move<br>
 				Spacebar = Dash<br>
 				LMB = Shoot<br>
 				RMB = Bomb<br>
 				P = Pause<br>
-				F = Fullscreen<br>
+				<!-- F = Fullscreen<br> -->
 				<i>*Don't blow yourself up with the bomb!*</i>
 			</div>
-		</a>
 			<div class=emscripten_border>
-				<iframe class=emscripten width="1280px" height="720px" frameborder="0" src="shapewars">
-				
+				<button onclick="launchGame(this)">
+					<img src="/assets/imgs/svg/play.svg">
+				</button>
+				<iframe class=emscripten width="1280" height="720" frameborder="0" data-src="shapewars" src="">
 				</iframe>
 			</div>
+		</a>
+		<a name="rtsgame" target="_top">
+			<div class="description">
+				<h1>HexCraft</h1>
+				<p>A game originally designed for the <a href="https://itch.io/jam/raylib-6x-gamejam">raylib 6 release gamejam.</a> Inspired by the <i>Dungeon Keeper</i> series you play as an evil witch placing horrible curses on the local townfolk to convert them to your cause. Capture territory by building monuments, with bigger cities requiring more nearby monuments to capture. Heal and Command your units using spells. Victory is achieved once you capture the castle at the end, but watch out for your mana! <a href="https://github.com/noloitering/raylib6_game_jam">Source code here</a></p>
+			</div>
+			<div class="instructions">
+				<h2>Supported Platforms:</h2>
+				<li>Mobile</li><br>
+				<li>Desktop/PC</li>
+				<h2>Controls:</h2>
+				LMB/Tap = Build/Cast<br>
+				RMB = Command Units<br>
+				P = Pause<br>
+			</div>
+			<div class=emscripten_border>
+				<button onclick="launchGame(this)">
+					<img src="/assets/imgs/svg/play.svg">
+				</button>
+				<iframe class=emscripten width="720px" height="720px" frameborder="0" data-src="hexcraft" src="">
+				</iframe>
+			</div>
+			<div class="credits">
+			
+			</div>
+		</a>	
 		</div>
-		<!-- <div class="section" id="shapeWar"> -->
-		<!-- <a name="rtsgame" target="_top"> -->
-			<!-- <div class="description"> -->
-		<!-- </a> -->
-		<!-- </div> -->
 	</div>
 	<!-- <textarea id=output rows=8></textarea> -->
 </body>
