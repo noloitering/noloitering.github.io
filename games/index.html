@@ -26,7 +26,7 @@
 	<div class="navbar">
 		<div class="buttonContainer">
 			<div class="photoButton"><a href="/photography">Photography</a></div>
-			<div class="gameButton"><a href="shape_wars.html">Game</a></div>
+			<div class="gameButton"><a href="/games">Game</a></div>
 			<div class="threedButton"><a href="/art">3D Art</a></div>
 		</div>
 	</div>
@@ -40,72 +40,76 @@
 			</ul>
 		</div>
 		<div class="section" id="games">
-		<a name="rtsgame" target="_top">
-			<h1>HexCraft</h1>
-			<div class="instructions">
-				<div class="platforms">
-					<h2>Supported Platforms</h2>
-					<div class="centered_list">
-						<ul>
-							<li>Mobile</li>
-							<li>Desktop/PC</li>
-						</ul>
+			<a name="rtsgame" target="_top">
+			<div class="game">
+				<h1>HexCraft</h1>
+				<div class="instructions">
+					<div class="platforms">
+						<h2>Supported Platforms</h2>
+						<div class="centered_list">
+							<ul>
+								<li>Mobile</li>
+								<li>Desktop/PC</li>
+							</ul>
+						</div>
+					</div>
+					<div class="controls">
+						<h2>Controls</h2>
+						LMB/Tap = Build/Cast<br>
+						RMB = Command Units<br>
+						P = Pause<br>
 					</div>
 				</div>
-				<div class="controls">
-					<h2>Controls</h2>
-					LMB/Tap = Build/Cast<br>
-					RMB = Command Units<br>
-					P = Pause<br>
+				<div class=emscripten_border>
+					<button onclick="launchGame(this)">
+						<img src="/assets/imgs/svg/play.svg">
+					</button>
+					<iframe class=emscripten width="720px" height="720px" frameborder="0" data-src="hexcraft" src="">
+					</iframe>
+				</div>
+				<div class="description">
+					<p>A <a href="hexcraft">game</a> originally designed for the <a href="https://itch.io/jam/raylib-6x-gamejam">raylib 6 release gamejam.</a> Inspired by the <i>Dungeon Keeper</i> series you play as an evil witch placing horrible curses on the local townfolk to convert them to your cause. Capture territory by building monuments, with bigger cities requiring more nearby monuments to capture. Heal and Command your units using spells. Victory is achieved once you capture the castle at the end, but watch out for your mana! <a href="https://github.com/noloitering/raylib6_game_jam">Source code here</a></p>
+				</div>
+				<div class="credits">
+				
 				</div>
 			</div>
-			<div class=emscripten_border>
-				<button onclick="launchGame(this)">
-					<img src="/assets/imgs/svg/play.svg">
-				</button>
-				<iframe class=emscripten width="720px" height="720px" frameborder="0" data-src="hexcraft" src="">
-				</iframe>
-			</div>
-			<div class="description">
-				<p>A <a href="hexcraft">game</a> originally designed for the <a href="https://itch.io/jam/raylib-6x-gamejam">raylib 6 release gamejam.</a> Inspired by the <i>Dungeon Keeper</i> series you play as an evil witch placing horrible curses on the local townfolk to convert them to your cause. Capture territory by building monuments, with bigger cities requiring more nearby monuments to capture. Heal and Command your units using spells. Victory is achieved once you capture the castle at the end, but watch out for your mana! <a href="https://github.com/noloitering/raylib6_game_jam">Source code here</a></p>
-			</div>
-			<div class="credits">
-			
-			</div>
-		</a>	
-		<a name="shapegame" target="_top" frameborder="1">
-			<h1>Shape Wars</h1>
-			<div class="instructions">
-				<div class="platforms">
-					<h2>Supported Platforms</h2>
-					<div class="centered_list">
-						<ul>
-							<li>Desktop/PC</li>
-						</ul>
+			</a>
+			<a name="shapegame" target="_top" frameborder="1">
+			<div class="game">
+				<h1>Shape Wars</h1>
+				<div class="instructions">
+					<div class="platforms">
+						<h2>Supported Platforms</h2>
+						<div class="centered_list">
+							<ul>
+								<li>Desktop/PC</li>
+							</ul>
+						</div>
+					</div>
+					<div class="controls">
+						<h2>Controls</h2>
+						WASD/arrow keys = Move<br>
+						Spacebar = Dash<br>
+						LMB = Shoot<br>
+						RMB = Bomb<br>
+						P = Pause<br>
+						<!-- F = Fullscreen<br> -->
+						<!-- <i>*Don't blow yourself up with the bomb!*</i> -->
 					</div>
 				</div>
-				<div class="controls">
-					<h2>Controls</h2>
-					WASD/arrow keys = Move<br>
-					Spacebar = Dash<br>
-					LMB = Shoot<br>
-					RMB = Bomb<br>
-					P = Pause<br>
-					<!-- F = Fullscreen<br> -->
-					<!-- <i>*Don't blow yourself up with the bomb!*</i> -->
+				<div class=emscripten_border>
+					<button onclick="launchGame(this)">
+						<img src="/assets/imgs/svg/play.svg">
+					</button>
+					<iframe class=emscripten width="1280" height="720" frameborder="0" data-src="shapewars" src="">
+					</iframe>
+				</div>
+				<div class="description">
+					<p>A <a href="shapewars">game</a> created for my Computer Science 4300 class. Built using raylib and cross compiled to web using emscripten. You play as a brave triangle whose mission is to destroy all other shapes. Gain score by shooting, dashing, and bombing your way to victory to see how long you can last in this simple survival game! Enemies are worth more points depending on the number of sides they have and the debris that fly off them are worth double! They will start spawning quicker the longer you survive. <a href="https://github.com/EricBarrett/shape_wars/">Source code here</a></p>
 				</div>
 			</div>
-			<div class=emscripten_border>
-				<button onclick="launchGame(this)">
-					<img src="/assets/imgs/svg/play.svg">
-				</button>
-				<iframe class=emscripten width="1280" height="720" frameborder="0" data-src="shapewars" src="">
-				</iframe>
-			</div>
-			<div class="instructions">
-				<p>A <a href="shapewars">game</a> created for my Computer Science 4300 class. Built using raylib and cross compiled to web using emscripten. You play as a brave triangle whose mission is to destroy all other shapes. Gain score by shooting, dashing, and bombing your way to victory to see how long you can last in this simple survival game! Enemies are worth more points depending on the number of sides they have and the debris that fly off them are worth double! They will start spawning quicker the longer you survive. <a href="https://github.com/EricBarrett/shape_wars/">Source code here</a></p>
-			</div>
-		</a>
+			</a>
 		</div>
 	</div>
 	<!-- <textarea id=output rows=8></textarea> -->
