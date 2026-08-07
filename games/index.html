@@ -35,36 +35,11 @@
 			<h3><a href="/">Home</a></h3>
 			<span class="slideOut">&raquo;</span>
 			<ul>
-				<li class="active"><a href="#shapegame">Shape Wars</a></li>
-				<li><a href="hexcraft">HexCraft</a></li>
+				<li class="active"><a href="#rtsgame">HexCraft</a></li>
+				<li><a href="#shapegame">Shape Wars</a></li>
 			</ul>
 		</div>
 		<div class="section" id="shapeWar">
-		<a name="shapegame" target="_top" frameborder="1">
-			<div class="description">
-				<h1>Shape Wars</h1>
-				<p>A game created for my CS4300 class. Built using raylib and cross compiled to web using emscripten. You play as a brave triangle whose mission is to destroy all other shapes. Gain score by shooting, dashing, and bombing your way to victory to see how long you can last in this simple survival game! Enemies are worth more points depending on the number of sides they have and the debris that fly off them are worth double! They will start spawning quicker the longer you survive. <a href="https://github.com/EricBarrett/shape_wars/">Source code here</a></p>
-			</div>
-			<div class="instructions">
-				<h2>Supported Platforms:</h2>
-				<li>Desktop/PC</li>
-				<h2>Controls:</h2>
-				WASD/arrow keys = Move<br>
-				Spacebar = Dash<br>
-				LMB = Shoot<br>
-				RMB = Bomb<br>
-				P = Pause<br>
-				<!-- F = Fullscreen<br> -->
-				<i>*Don't blow yourself up with the bomb!*</i>
-			</div>
-			<div class=emscripten_border>
-				<button onclick="launchGame(this)">
-					<img src="/assets/imgs/svg/play.svg">
-				</button>
-				<iframe class=emscripten width="1280" height="720" frameborder="0" data-src="shapewars" src="">
-				</iframe>
-			</div>
-		</a>
 		<a name="rtsgame" target="_top">
 			<div class="description">
 				<h1>HexCraft</h1>
@@ -90,6 +65,31 @@
 			
 			</div>
 		</a>	
+		<a name="shapegame" target="_top" frameborder="1">
+			<div class="description">
+				<h1>Shape Wars</h1>
+				<p>A game created for my Computer Science 4300 class. Built using raylib and cross compiled to web using emscripten. You play as a brave triangle whose mission is to destroy all other shapes. Gain score by shooting, dashing, and bombing your way to victory to see how long you can last in this simple survival game! Enemies are worth more points depending on the number of sides they have and the debris that fly off them are worth double! They will start spawning quicker the longer you survive. <a href="https://github.com/EricBarrett/shape_wars/">Source code here</a></p>
+			</div>
+			<div class="instructions">
+				<h2>Supported Platforms:</h2>
+				<li>Desktop/PC</li>
+				<h2>Controls:</h2>
+				WASD/arrow keys = Move<br>
+				Spacebar = Dash<br>
+				LMB = Shoot<br>
+				RMB = Bomb<br>
+				P = Pause<br>
+				<!-- F = Fullscreen<br> -->
+				<i>*Don't blow yourself up with the bomb!*</i>
+			</div>
+			<div class=emscripten_border>
+				<button onclick="launchGame(this)">
+					<img src="/assets/imgs/svg/play.svg">
+				</button>
+				<iframe class=emscripten width="1280" height="720" frameborder="0" data-src="shapewars" src="">
+				</iframe>
+			</div>
+		</a>
 		</div>
 	</div>
 	<!-- <textarea id=output rows=8></textarea> -->
