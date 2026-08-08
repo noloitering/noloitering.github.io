@@ -605,17 +605,18 @@ button {
 	transition: 0.3s;
 }
 
+#games {
+	display: flex;
+	gap: 1em;
+}
+
 .game {
-	margin-top: 1em;
+	margin-bottom: 1em;
 	border-style: solid;
 	border-color: rgba(255,255,255,0.8);
 	border-width: 2px;
 	border-radius: 10px;
 	background-color: rgba(0,0,0,0.1);
-}
-
-.game + .game {
-	margin-top: 2em;
 }
 
 /* .game:hover, .game:active { */
