@@ -459,6 +459,7 @@ button {
 }
 
 .section {
+	display: flex;
 	flex-direction: column;
 	width: 86%;
 	height: 100%;
@@ -467,12 +468,6 @@ button {
 	text-align: justify;
 	color: rgba(255,255,255,.9);
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-
-#store {
-	display: flex;
-	transform: translate(-8%,0);
-	left: -8%;
 }
 
 #pics {
@@ -501,10 +496,16 @@ button {
 	text-align: center;
 }
 
+#store {
+	transform: translate(-8%,0);
+	left: -8%;
+	gap: 1em;
+}
+
 .skin {
 	display: flex;
 	flex-direction: column;
-	margin-bottom: 82px;
+	margin-bottom: 1em;
 	border-style: solid solid none solid;
     border-color: rgba(255,255,255,0.8);
 	border-width: 2px;
@@ -606,7 +607,6 @@ button {
 }
 
 #games {
-	display: flex;
 	gap: 1em;
 }
 
