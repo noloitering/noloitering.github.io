@@ -196,12 +196,12 @@ button {
 
 .clipboardNotify {
 	position: absolute;
-	top: -55px;
+	top: -65px;
 	right: 0;
 	background-color: rgba(10, 10, 10, 0.8);
-	width: 45px;
-	height: 45px;
-	border-radius: 8px;
+	width: 55px;
+	height: 55px;
+	border-radius: 12px;
 	padding: 5px;
 	border: 2px outset rgba(100, 100, 100, 0.8);
 	
@@ -210,24 +210,7 @@ button {
 	display: inline-block;
 	opacity: 0;
 	pointer-events: none;
-	transition: opacity 0.4s linear, visibility 0.4s;
-}
-
-.clipboardNotify.active {
-	visibility: visible;
-	opacity: 1;
-	top: -55px;
-	transition: opacity 0.4s linear, visibility 0.4s;
-	animation: popBounce 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.175) forwards;
-}
-
-@keyframes popBounce {
-	0% {
-		transform: scaleY(0);
-	}
-	100% {
-		transform: scaleY(1);
-	}
+	transition: opacity 0.2s linear, visibility 0.2s;
 }
 
 .clipboardNotify::after {
@@ -240,6 +223,26 @@ button {
 	border-width: 6px 6px 0 6px; 
 	border-style: solid;
 	border-color: rgba(0, 0, 0, 1) transparent transparent transparent;
+}
+
+.clipboardNotify.active {
+	visibility: visible;
+	opacity: 1;
+	top: -65px;
+	transition: opacity 0.3s linear, visibility 0.3s;
+	animation: popBounce 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes popBounce {
+	0% {
+		transform: scaleY(0);
+	}
+	70% {
+		transform: scaleY(1.1);
+	}
+	100% {
+		transform: scaleY(1);
+	}
 }
 
 .clipboardNotify img {
@@ -603,12 +606,16 @@ button {
 }
 
 .game {
-	margin-bottom: 2em;
+	margin-top: 1em;
 	border-style: solid;
 	border-color: rgba(255,255,255,0.8);
 	border-width: 2px;
 	border-radius: 10px;
 	background-color: rgba(0,0,0,0.1);
+}
+
+.game + .game {
+	margin-top: 2em;
 }
 
 /* .game:hover, .game:active { */
